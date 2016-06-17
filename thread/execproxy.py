@@ -78,8 +78,7 @@ class ReadTask(thread.Thread):
 
 class ExecProxy(thread.Thread):
     '''
-    模拟我们的执行网关（ExecProxy），从任务队列里读取任务，
-    然后判断是否能执行（如果没有主机在执行则可以），可以的话交由执行线程ProcessTask处理
+    从任务队列里读取任务，然后判断是否能执行（如果没有主机在执行则可以），可以的话交由执行线程ProcessTask处理
     '''
     def __init__(self, taskList, procHostList):
         thread.Thread.__init__(self)  # 默认初始化
